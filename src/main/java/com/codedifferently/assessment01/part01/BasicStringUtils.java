@@ -10,7 +10,24 @@ public class BasicStringUtils {
      * @param str
      * @return
      */
-    public static String camelCase(String str){return null;}
+
+    public static String camelCase(String str) {
+        String[] words = str.split("[\\W_]+");
+        StringBuilder builder = new StringBuilder();
+        for (int i = 0; i < str.length(); i++) {
+            String word = words[i];
+            if (i == 0) {
+                word = word.isEmpty() ? word : word.toLowerCase();
+            } else {
+                word = word.isEmpty() ? word : Character.toUpperCase(word.charAt(0)) + word.substring(1).toLowerCase();
+            }
+            builder.append(word);
+        }
+        return builder.toString();
+    }
+
+
+
 
     /**
      * Reverse the string
@@ -19,7 +36,11 @@ public class BasicStringUtils {
      * @param str
      * @return
      */
-    public static String reverse(String str){return null;}
+    public static String reverse(String str){
+        StringBuilder newReverse = new StringBuilder(str);
+       newReverse.reverse();
+       return newReverse.toString();
+    }
 
     /**
      * Camel case the first letter of every word, then reverse the string and remove all spaces

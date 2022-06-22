@@ -7,7 +7,10 @@ public class StringUtils {
      * @return
      */
     public static String[] getWords(String sentence){
-        return null;
+
+        String[] newStringArray = sentence.split(" ");
+        return newStringArray;
+
     }
 
     /**
@@ -16,7 +19,12 @@ public class StringUtils {
      * @return
      */
     public static String getFirstWord(String sentence){
-        return null;
+        //turn String sentence into string array
+        //loop through array
+        // pull [0]
+
+        String[] newStringArray = sentence.split(" ");
+        return newStringArray[0];
     }
 
     /**
@@ -25,7 +33,12 @@ public class StringUtils {
      * @return
      */
     public static String reverseFirstWord(String sentence){
-        return null;
+      String[] newStringArray = sentence.split(" ");
+      String firstLetter = newStringArray[0];
+      StringBuilder reversedFirst = new StringBuilder(firstLetter);
+
+
+      return reversedFirst.reverse().toString();
     }
 
     /**
@@ -41,5 +54,8 @@ public class StringUtils {
      * @param index
      * @return
      */
-    public static String removeCharacterAtIndex(String str, int index){return null;}
+    public static String removeCharacterAtIndex(String str, int index){
+        StringBuilder removeChar = new StringBuilder(str);
+        return removeChar.deleteCharAt(index).toString();
+    }
 }

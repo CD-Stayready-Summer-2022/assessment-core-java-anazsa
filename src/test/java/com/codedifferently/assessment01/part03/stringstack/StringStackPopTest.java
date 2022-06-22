@@ -22,7 +22,6 @@ public class StringStackPopTest {
         });
 
     }
-
     @Test
     public void test2() {
         stack.push("Wutang");
